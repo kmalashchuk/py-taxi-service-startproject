@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Manufacturer(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     country = models.CharField(max_length=255)
 
     def __str__(self):
@@ -26,4 +26,3 @@ class Driver(AbstractUser):
 
     def __str__(self):
         return f"{self.username} ({self.first_name} {self.last_name})"
-
